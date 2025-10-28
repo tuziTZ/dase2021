@@ -1,0 +1,7 @@
+代码文件说明：
+	tieba_spider:
+		对百度贴吧主题帖及其内容的爬取工具，其中selinium文件更有效，spin_img和旋转验证码是从网络上下载的百度贴吧验证码的破解工具，id用来应用它。check_delete与integrate文件用于数据预处理。
+	user_spider:
+		包含对用户数据的爬取工具user_spider,对吧信息的爬取工具ba_spider,对主题帖日期的爬取工具zhutitie_spider，爬取后的数据存储在文件夹中，source存放tieba_spider爬取到的数据。
+	dase_intro:
+		包含pretreat和visualization两个文件，分别负责预处理和数据可视化，里面的函数与实验报告中的每个议题大致对应。

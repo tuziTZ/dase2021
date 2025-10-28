@@ -1,0 +1,34 @@
+For the containment search problem, we are given a de-
+sired minimal containment as a threshold t. On the other
+hand, LSH can only be tuned given a Jaccard similarity
+threshold s. Thus, in order to use LSH for containment
+search, the containment threshold needs to be converted to
+a Jaccard similarity threshold.
+Consider a domain X with domain size x = jXj and query
+Q with domain size q = jQj. We can convert Jaccard sim-
+ilarity and containment back and forth by the inclusion-
+exclusion principle. If t = t(Q;X), we can compute the cor-
+responding Jaccard similarity s = s(Q;X) given the domain
+sizes x and q. The transformations are given as follows.
+^sx;q(t) =
+t
+x
+q + 1 􀀀 t
+; ^tx;q(s) =
+( x
+q + 1)s
+1 + s
+(6)
+Notice the transformation t 7! s depends on the domain
+size x, which is typically not a constant, so we need to ap-
+proximate x. We choose to do so in a way that ensures the
+transformation to s does not introduce any new false neg-
+atives over using t. Suppose that X is from a partitioned
+set of domains with sizes in the interval of [l; u), where l and
+u are the lower and upper domain size bound of the parti-
+tion. A conservative approximation can be made by using
+the upper bound u for x. This ensures that ltering by s
+will not result in any new false negatives.
+We dene a Jaccard similarity threshold using the upper
+bound u:
+s
